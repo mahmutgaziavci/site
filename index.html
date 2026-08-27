@@ -1,0 +1,5901 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <title>
+        Mahmut Gazi Avcı | Premium Web Tasarım, Yazılım & Dijital Çözümler
+    </title>
+
+    <meta
+        name="description"
+        content="Mahmut Gazi Avcı; premium web tasarım, özel yazılım, kurumsal web siteleri, e-ticaret ve SEO çözümleri geliştirir."
+    >
+
+    <meta
+        name="keywords"
+        content="web tasarım, web geliştirme, Bursa web tasarım, kurumsal web sitesi, e-ticaret, SEO, UI UX, Mahmut Gazi Avcı"
+    >
+
+    <meta name="author" content="Mahmut Gazi Avcı">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#050505">
+    <meta name="color-scheme" content="dark">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="canonical" href="https://mahmutgaziavci.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="Mahmut Gazi Avcı | Premium Web Tasarım">
+    <meta
+        property="og:description"
+        content="Markanızı dijitalde güçlendiren premium web tasarım ve dijital çözümler."
+    >
+    <meta property="og:url" content="https://mahmutgaziavci.com/">
+    <meta property="og:site_name" content="Mahmut Gazi Avcı">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mahmut Gazi Avcı | Web Tasarım & Dijital Çözümler">
+    <meta
+        name="twitter:description"
+        content="Premium web tasarım, e-ticaret, SEO ve özel dijital çözümler."
+    >
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* =====================================================
+           ROOT
+        ===================================================== */
+
+        :root {
+            --bg: #050505;
+            --bg-2: #0a0a0a;
+            --surface: #101010;
+            --surface-2: #151515;
+            --surface-3: #1d1d1d;
+
+            --text: #ffffff;
+            --text-soft: #ededed;
+            --muted: #a1a1a1;
+            --muted-2: #707070;
+
+            --accent: #ffffff;
+            --accent-light: #ffffff;
+            --accent-dark: #bdbdbd;
+            --gold: #d8d8d8;
+
+            --success: #ffffff;
+
+            --border: rgba(255, 255, 255, .075);
+            --border-strong: rgba(255, 255, 255, .12);
+            --border-hover: rgba(255, 255, 255, .42);
+
+            --glow: rgba(255, 255, 255, .10);
+
+            --max: 1220px;
+            --radius: 26px;
+
+            --header-height: 82px;
+        }
+
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 85% -5%,
+                    rgba(255, 255, 255, .08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at -10% 30%,
+                    rgba(255, 255, 255, .035),
+                    transparent 24%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: #080a08;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #262d27;
+            border-radius: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #39443a;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            border: 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        section {
+            position: relative;
+        }
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ===================================================== */
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+
+        /* =====================================================
+           CONTAINER
+        ===================================================== */
+
+        .container {
+            width: min(
+                calc(100% - 40px),
+                var(--max)
+            );
+
+            margin-inline: auto;
+        }
+
+
+        /* =====================================================
+           BACKGROUND
+        ===================================================== */
+
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: -4;
+
+            pointer-events: none;
+
+            opacity: .035;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,.08) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.08) 1px,
+                    transparent 1px
+                );
+
+            background-size: 80px 80px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 80%
+                );
+        }
+
+        .bg-orb {
+            position: fixed;
+
+            width: 420px;
+            height: 420px;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            filter: blur(110px);
+
+            opacity: .065;
+
+            z-index: -3;
+        }
+
+        .orb-1 {
+            top: 10%;
+            right: -250px;
+            background: var(--accent);
+        }
+
+        .orb-2 {
+            bottom: 5%;
+            left: -250px;
+            background: var(--gold);
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(7, 8, 7, .72);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+
+            transition:
+                background .3s ease,
+                border-color .3s ease;
+        }
+
+        .header.scrolled {
+            background:
+                rgba(7, 8, 7, .92);
+
+            border-color:
+                rgba(255,255,255,.11);
+        }
+
+        .nav {
+            height: var(--header-height);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+
+            letter-spacing: -.05em;
+        }
+
+        .logo-box {
+            width: 42px;
+            height: 42px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: #ffffff;
+
+            color: #080a08;
+
+            font-size: 10px;
+            letter-spacing: -.02em;
+
+            box-shadow:
+                0 12px 40px rgba(255,255,255,.10);
+        }
+
+        .logo-text {
+            font-size: 15px;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            padding: 9px 11px;
+
+            border-radius: 9px;
+
+            color: #aeb7b0;
+
+            font-size: 11px;
+            font-weight: 500;
+
+            transition:
+                color .25s ease,
+                background .25s ease;
+        }
+
+        .nav-links a:not(.nav-cta):hover {
+            color: #fff;
+            background: rgba(255,255,255,.04);
+        }
+
+        .nav-cta {
+            margin-left: 8px;
+
+            padding: 11px 17px !important;
+
+            background: var(--text);
+
+            color: #080a08 !important;
+
+            font-weight: 800 !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light) !important;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu {
+            display: none;
+
+            width: 43px;
+            height: 43px;
+
+            place-items: center;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: rgba(255,255,255,.035);
+
+            color: white;
+
+            cursor: pointer;
+
+            font-size: 18px;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100svh;
+
+            display: flex;
+            align-items: center;
+
+            padding:
+                155px
+                0
+                90px;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 1px;
+            height: 180px;
+
+            left: 50%;
+            top: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    rgba(255,255,255,.22),
+                    transparent
+                );
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.04fr
+                .96fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            width: fit-content;
+
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.025);
+
+            color: var(--accent-light);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .16em;
+            text-transform: uppercase;
+
+            margin-bottom: 27px;
+        }
+
+        .dot {
+            width: 7px;
+            height: 7px;
+
+            flex: 0 0 auto;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            box-shadow:
+                0 0 15px rgba(255,255,255,.75);
+
+            animation: pulse 2.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% {
+                box-shadow:
+                    0 0 7px rgba(255,255,255,.30);
+            }
+
+            50% {
+                box-shadow:
+                    0 0 23px rgba(255,255,255,.9);
+            }
+        }
+
+        .hero h1 {
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    4.2rem,
+                    7.4vw,
+                    7.8rem
+                );
+
+            line-height: .84;
+
+            letter-spacing: -.095em;
+
+            max-width: 760px;
+        }
+
+        .hero h1 span {
+            position: relative;
+
+            color: var(--accent);
+        }
+
+        .hero h1 span::after {
+            content: "";
+
+            position: absolute;
+
+            left: 4px;
+            right: 5px;
+            bottom: -10px;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--accent),
+                    transparent
+                );
+
+            opacity: .55;
+        }
+
+        .hero-description {
+            max-width: 650px;
+
+            margin:
+                35px
+                0
+                37px;
+
+            color: var(--muted);
+
+            font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 11px;
+        }
+
+        .btn {
+            min-height: 47px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            padding: 13px 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--text);
+            color: #080a08;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+
+            box-shadow:
+                0 18px 45px rgba(255,255,255,.08);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,.025);
+            color: var(--text);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border-hover);
+            background: rgba(185,201,167,.045);
+        }
+
+
+        /* =====================================================
+           HERO VISUAL
+        ===================================================== */
+
+        .hero-card {
+            position: relative;
+
+            min-height: 590px;
+
+            border: 1px solid var(--border);
+            border-radius: 35px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.065),
+                    rgba(255,255,255,.01)
+                );
+
+            box-shadow:
+                0 45px 120px rgba(0,0,0,.38);
+
+            transform-style: preserve-3d;
+
+            transition: transform .15s ease;
+        }
+
+        .hero-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+            height: 430px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.09);
+
+            filter: blur(90px);
+
+            top: -190px;
+            right: -120px;
+
+            z-index: 1;
+        }
+
+        .hero-card::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    125deg,
+                    rgba(255,255,255,.035),
+                    transparent 35%,
+                    transparent 70%,
+                    rgba(255,255,255,.035)
+                );
+
+            pointer-events: none;
+
+            z-index: 5;
+        }
+
+        .hero-photo {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center top;
+
+            z-index: 2;
+
+            filter:
+                saturate(.88)
+                contrast(1.04);
+
+            transition: transform .8s ease;
+        }
+
+        .hero-card:hover .hero-photo {
+            transform: scale(1.025);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+
+            z-index: 3;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5,7,6,.95) 0%,
+                    rgba(5,7,6,.60) 28%,
+                    rgba(5,7,6,.12) 68%,
+                    rgba(5,7,6,.18) 100%
+                );
+        }
+
+        .floating {
+            position: absolute;
+            z-index: 6;
+
+            padding: 9px 13px;
+
+            border: 1px solid rgba(255,255,255,.11);
+            border-radius: 999px;
+
+            background:
+                rgba(8,9,8,.66);
+
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+
+            color: #c1c9c3;
+
+            font-size: 8px;
+            font-weight: 700;
+
+            letter-spacing: .1em;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,.2);
+        }
+
+        .f1 {
+            top: 65px;
+            left: 25px;
+        }
+
+        .f2 {
+            top: 150px;
+            right: 24px;
+        }
+
+        .f3 {
+            bottom: 135px;
+            left: 30px;
+        }
+
+        .f4 {
+            bottom: 93px;
+            right: 30px;
+        }
+
+        .hero-info {
+            position: absolute;
+
+            z-index: 7;
+
+            left: 25px;
+            right: 25px;
+            bottom: 24px;
+
+            padding: 20px;
+
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 19px;
+
+            background:
+                rgba(8,9,8,.66);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .hero-info-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .hero-info h3 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 23px;
+
+            letter-spacing: -.04em;
+        }
+
+        .hero-info p {
+            color: #aeb6b0;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        .hero-status {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            color: #aeb8b0;
+            font-size: 9px;
+        }
+
+        .hero-status i {
+            width: 6px;
+            height: 6px;
+
+            border-radius: 50%;
+
+            background: var(--success);
+
+            box-shadow:
+                0 0 12px rgba(255,255,255,.7);
+        }
+
+
+        /* =====================================================
+           TRUST
+        ===================================================== */
+
+        .trust {
+            padding:
+                10px
+                0
+                80px;
+        }
+
+        .trust-line {
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            gap: 20px;
+
+            padding: 24px 0;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trust-item {
+            color: #7d8780;
+
+            font-size: 9px;
+            font-weight: 700;
+
+            letter-spacing: .14em;
+            text-transform: uppercase;
+
+            text-align: center;
+        }
+
+        .trust-item::before {
+            content: "✦";
+
+            color: var(--accent);
+
+            margin-right: 8px;
+
+            opacity: .7;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section:not(.hero):not(.trust) {
+            padding: 125px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            margin-bottom: 55px;
+        }
+
+        .kicker {
+            color: var(--accent);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .19em;
+            text-transform: uppercase;
+        }
+
+        .section-header h2 {
+            margin-top: 14px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    2.8rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: .92;
+
+            letter-spacing: -.075em;
+        }
+
+        .section-header p {
+            max-width: 440px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.85;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: .72fr 1.28fr;
+
+            gap: 95px;
+        }
+
+        .about-title h2 {
+            margin-top: 15px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    3rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: .9;
+
+            letter-spacing: -.075em;
+        }
+
+        .about-content {
+            max-width: 720px;
+        }
+
+        .expert-title {
+            margin-bottom: 21px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 27px;
+
+            line-height: 1.25;
+
+            letter-spacing: -.04em;
+        }
+
+        .expert-title span {
+            color: var(--accent);
+        }
+
+        .about-content > p {
+            margin-bottom: 18px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            margin-top: 30px;
+        }
+
+        .skill {
+            padding: 8px 12px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.022);
+
+            color: #c3cbc5;
+
+            font-size: 9px;
+        }
+
+        .expert-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 9px;
+
+            margin-top: 30px;
+        }
+
+        .expert-box {
+            padding: 19px;
+
+            border: 1px solid var(--border);
+            border-radius: 17px;
+
+            background: rgba(255,255,255,.022);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease;
+        }
+
+        .expert-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-hover);
+        }
+
+        .expert-box strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 12px;
+        }
+
+        .expert-box span {
+            color: var(--muted);
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            margin-top: 70px;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stat {
+            padding: 28px 20px;
+
+            border-right: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border-right: 0;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 34px;
+
+            letter-spacing: -.06em;
+        }
+
+        .stat strong span {
+            color: var(--accent);
+        }
+
+        .stat p {
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .service {
+            position: relative;
+
+            min-height: 285px;
+
+            padding: 31px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.035),
+                    rgba(255,255,255,.012)
+                );
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease,
+                background .35s ease;
+        }
+
+        .service::after {
+            content: "";
+
+            position: absolute;
+
+            width: 160px;
+            height: 160px;
+
+            right: -80px;
+            bottom: -80px;
+
+            border-radius: 50%;
+
+            background: var(--glow);
+
+            filter: blur(35px);
+        }
+
+        .service:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--border-hover);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(185,201,167,.055),
+                    rgba(255,255,255,.012)
+                );
+        }
+
+        .service-icon {
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background: rgba(185,201,167,.025);
+
+            color: var(--accent);
+
+            font-size: 17px;
+        }
+
+        .service-number {
+            margin-top: 26px;
+
+            color: var(--accent);
+
+            font-family: monospace;
+
+            font-size: 10px;
+        }
+
+        .service h3 {
+            margin: 8px 0;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 20px;
+
+            letter-spacing: -.035em;
+        }
+
+        .service p {
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           PROCESS
+        ===================================================== */
+
+        .process {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+        }
+
+        .process-card {
+            position: relative;
+
+            padding: 29px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            background: rgba(255,255,255,.02);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease;
+        }
+
+        .process-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--accent),
+                    transparent
+                );
+
+            opacity: .35;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+        }
+
+        .process-number {
+            color: rgba(255,255,255,.30);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        .process-card h3 {
+            margin: 22px 0 9px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 17px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 17px;
+        }
+
+        .project {
+            position: relative;
+
+            min-height: 390px;
+
+            padding: 29px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.04),
+                    rgba(255,255,255,.012)
+                );
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+        }
+
+        .project::after {
+            content: "";
+
+            position: absolute;
+
+            width: 270px;
+            height: 270px;
+
+            right: -120px;
+            bottom: -120px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(185,201,167,.065);
+
+            filter: blur(65px);
+
+            pointer-events: none;
+        }
+
+        .project-afm {
+            grid-column: span 2;
+
+            min-height: 455px;
+
+            display: flex;
+
+            gap: 38px;
+
+            padding: 20px;
+        }
+
+        .project-image {
+            position: relative;
+
+            width: 48%;
+            min-height: 410px;
+
+            overflow: hidden;
+
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 21px;
+
+            background: #050505;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: transform .8s ease;
+        }
+
+        .project:hover .project-image img {
+            transform: scale(1.035);
+        }
+
+        .project-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,0,0,.02),
+                    rgba(0,0,0,.38)
+                );
+        }
+
+        .project-info {
+            position: relative;
+            z-index: 2;
+
+            flex: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 20px 20px 20px 5px;
+        }
+
+        .project-tag {
+            color: var(--accent);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .17em;
+
+            text-transform: uppercase;
+        }
+
+        .project-info h3 {
+            margin-top: 17px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    2rem,
+                    3vw,
+                    3.2rem
+                );
+
+            letter-spacing: -.06em;
+        }
+
+        .project-info p {
+            max-width: 510px;
+
+            margin-top: 14px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.85;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-top: 24px;
+        }
+
+        .project-meta span {
+            padding: 7px 10px;
+
+            border: 1px solid var(--border);
+            border-radius: 999px;
+
+            color: #bdc5bf;
+
+            font-size: 8px;
+        }
+
+        .project-link {
+            width: max-content;
+
+            display: inline-flex;
+            align-items: center;
+
+            margin-top: 27px;
+
+            padding: 12px 16px;
+
+            border-radius: 10px;
+
+            background: var(--text);
+
+            color: #080a08;
+
+            font-size: 10px;
+            font-weight: 800;
+
+            transition:
+                transform .25s ease,
+                background .25s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            background: var(--accent-light);
+        }
+
+        .project:not(.project-afm) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project:not(.project-afm) h3 {
+            margin-top: 92px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 28px;
+
+            letter-spacing: -.05em;
+        }
+
+        .project:not(.project-afm) p {
+            max-width: 470px;
+
+            margin-top: 10px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.75;
+        }
+
+        .project:not(.project-afm) .project-link {
+            margin-top: auto;
+        }
+
+
+        /* =====================================================
+           PRICING
+        ===================================================== */
+
+        .pricing {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+
+            align-items: stretch;
+        }
+
+        .price-card {
+            position: relative;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 31px 24px;
+
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            background:
+                rgba(255,255,255,.023);
+
+            transition:
+                transform .35s ease,
+                border-color .35s ease;
+        }
+
+        .price-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-hover);
+        }
+
+        .price-card.featured {
+            border-color:
+                rgba(185,201,167,.5);
+
+            background:
+                linear-gradient(
+                    160deg,
+                    rgba(185,201,167,.095),
+                    rgba(255,255,255,.018)
+                );
+
+            box-shadow:
+                0 30px 90px rgba(0,0,0,.2);
+        }
+
+        .popular {
+            position: absolute;
+
+            top: 17px;
+            right: 17px;
+
+            padding: 6px 8px;
+
+            border-radius: 999px;
+
+            background: var(--accent);
+
+            color: #090b09;
+
+            font-size: 7px;
+            font-weight: 800;
+
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+        }
+
+        .price {
+            margin: 18px 0 2px;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 34px;
+            font-weight: 800;
+
+            letter-spacing: -.065em;
+        }
+
+        .price-note {
+            margin-bottom: 24px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+        }
+
+        .features {
+            flex: 1;
+
+            display: grid;
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+            list-style: none;
+        }
+
+        .features li {
+            position: relative;
+
+            padding-left: 17px;
+
+            color: #b9c1bb;
+
+            font-size: 10px;
+        }
+
+        .features li::before {
+            content: "✓";
+
+            position: absolute;
+            left: 0;
+
+            color: var(--accent);
+
+            font-weight: 800;
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           NOTICE
+        ===================================================== */
+
+        .notice {
+            margin-top: 20px;
+
+            padding: 17px 18px;
+
+            border: 1px solid rgba(185,201,167,.18);
+            border-radius: 14px;
+
+            background:
+                rgba(185,201,167,.035);
+
+            color: #aeb7b0;
+
+            font-size: 10px;
+
+            line-height: 1.8;
+        }
+
+        .notice strong {
+            color: var(--accent-light);
+        }
+
+
+        /* =====================================================
+           MAINTENANCE
+        ===================================================== */
+
+        .maintenance {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 15px;
+        }
+
+        .maintenance-card {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+            border-radius: 23px;
+
+            background:
+                rgba(255,255,255,.025);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease;
+        }
+
+        .maintenance-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+        }
+
+        .maintenance-card h3 {
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+        }
+
+        .maintenance-price {
+            margin: 14px 0;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 30px;
+            font-weight: 800;
+
+            letter-spacing: -.06em;
+        }
+
+        .maintenance-price span {
+            font-family: "DM Sans", sans-serif;
+
+            color: var(--muted);
+
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .maintenance-card p {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 50px;
+
+            padding: 80px;
+
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: 34px;
+
+            background:
+                radial-gradient(
+                    circle at 88% 25%,
+                    rgba(255,255,255,.09),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.04),
+                    rgba(255,255,255,.015)
+                );
+        }
+
+        .cta::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            right: -220px;
+            top: -220px;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            position: relative;
+            z-index: 2;
+
+            font-family: "Manrope", sans-serif;
+
+            font-size:
+                clamp(
+                    2.6rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: .92;
+
+            letter-spacing: -.08em;
+        }
+
+        .cta p {
+            position: relative;
+            z-index: 2;
+
+            max-width: 550px;
+
+            margin-top: 17px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .cta .buttons {
+            position: relative;
+            z-index: 2;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        .faq {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 11px;
+        }
+
+        .faq-item {
+            overflow: hidden;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background:
+                rgba(255,255,255,.023);
+
+            transition: border-color .25s ease;
+        }
+
+        .faq-item.active {
+            border-color: var(--border-hover);
+        }
+
+        .faq-question {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 21px;
+
+            background: none;
+
+            color: var(--text);
+
+            text-align: left;
+
+            font-weight: 700;
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+        .faq-question span {
+            min-width: 20px;
+
+            color: var(--accent);
+
+            font-size: 18px;
+
+            text-align: center;
+
+            transition: transform .25s ease;
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition:
+                max-height .35s ease;
+        }
+
+        .faq-answer p {
+            padding:
+                0
+                21px
+                21px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding:
+                65px
+                0
+                30px;
+
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.4fr
+                .7fr
+                .7fr;
+
+            gap: 50px;
+        }
+
+        .footer-brand p {
+            max-width: 370px;
+
+            margin-top: 16px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            margin-bottom: 17px;
+
+            color: var(--accent);
+
+            font-size: 9px;
+            font-weight: 800;
+
+            letter-spacing: .16em;
+
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            cursor: pointer;
+
+            transition: color .2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text);
+        }
+
+        .site-creator {
+            color: #8f8f8f;
+        }
+
+        .site-creator strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            margin-top: 50px;
+            padding-top: 21px;
+
+            border-top: 1px solid var(--border);
+
+            color: #68716b;
+
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           MODALS
+        ===================================================== */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(0,0,0,.82);
+
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            width: min(850px, 100%);
+            max-height: 86vh;
+
+            overflow-y: auto;
+
+            border: 1px solid var(--border);
+            border-radius: 25px;
+
+            background: #0d100f;
+
+            box-shadow:
+                0 40px 120px rgba(0,0,0,.65);
+
+            animation:
+                modalIn .3s ease both;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px) scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-head {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 22px 25px;
+
+            background:
+                rgba(13,16,15,.96);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-head h2 {
+            font-family: "Manrope", sans-serif;
+
+            font-size: 20px;
+
+            letter-spacing: -.04em;
+        }
+
+        .close-modal {
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+            place-items: center;
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            color: white;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+        .modal-content {
+            padding: 30px 25px 40px;
+        }
+
+        .modal-content h3 {
+            margin: 25px 0 8px;
+
+            color: var(--accent-light);
+
+            font-family: "Manrope", sans-serif;
+
+            font-size: 15px;
+        }
+
+        .modal-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .modal-content p,
+        .modal-content li {
+            color: #aab2ad;
+
+            font-size: 12px;
+
+            line-height: 1.85;
+        }
+
+        .modal-content ul {
+            padding-left: 20px;
+        }
+
+
+        /* =====================================================
+           COOKIE
+        ===================================================== */
+
+        .cookie-banner {
+            position: fixed;
+
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 1500;
+
+            display: none;
+
+            width: min(900px, calc(100% - 40px));
+
+            margin-inline: auto;
+
+            padding: 19px 20px;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            background:
+                rgba(13,16,15,.96);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.45);
+        }
+
+        .cookie-banner.active {
+            display: block;
+        }
+
+        .cookie-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .cookie-content p {
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+        .cookie-actions {
+            display: flex;
+
+            gap: 8px;
+
+            flex-shrink: 0;
+        }
+
+        .cookie-actions button {
+            padding: 9px 13px;
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+
+            background:
+                rgba(255,255,255,.04);
+
+            color: white;
+
+            font-size: 9px;
+
+            cursor: pointer;
+        }
+
+        .cookie-actions .accept {
+            background: var(--text);
+            color: #080a09;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           REVEAL
+        ===================================================== */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(28px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE 1100
+        ===================================================== */
+
+        @media (max-width: 1100px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-card {
+                min-height: 570px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .services {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .pricing {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .process {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .project-afm {
+                grid-column: span 2;
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVE 900
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 75px;
+                left: 14px;
+                right: 14px;
+
+                padding: 15px;
+
+                border: 1px solid var(--border);
+                border-radius: 18px;
+
+                background:
+                    rgba(13,16,15,.98);
+
+                backdrop-filter: blur(20px);
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 2px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 9px;
+            }
+
+            .nav-cta {
+                margin:
+                    5px
+                    0
+                    0;
+                text-align: center;
+            }
+
+            .mobile-menu {
+                display: grid;
+            }
+
+            .trust-line {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .trust-item {
+                text-align: left;
+            }
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: 0;
+            }
+
+            .stat:nth-child(1),
+            .stat:nth-child(2) {
+                border-bottom: 1px solid var(--border);
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 720px) {
+
+            :root {
+                --header-height: 70px;
+            }
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--max)
+                    );
+            }
+
+            .nav {
+                height: 70px;
+            }
+
+            .nav-links {
+                top: 70px;
+            }
+
+            .logo-text {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding:
+                    120px
+                    0
+                    60px;
+            }
+
+            .hero::before {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(
+                        3.25rem,
+                        16vw,
+                        5.2rem
+                    );
+            }
+
+            .hero-description {
+                margin:
+                    28px
+                    0
+                    32px;
+
+                font-size: 14px;
+            }
+
+            .buttons {
+                width: 100%;
+            }
+
+            .buttons .btn {
+                flex: 1;
+            }
+
+            .hero-card {
+                min-height: 470px;
+                border-radius: 25px;
+            }
+
+            .hero-photo {
+                object-position: center top;
+            }
+
+            .hero-info {
+                left: 17px;
+                right: 17px;
+                bottom: 17px;
+            }
+
+            .floating {
+                padding: 8px 10px;
+                font-size: 7px;
+            }
+
+            .f1 {
+                top: 25px;
+                left: 16px;
+            }
+
+            .f2 {
+                top: 80px;
+                right: 16px;
+            }
+
+            .f3 {
+                bottom: 110px;
+                left: 16px;
+            }
+
+            .f4 {
+                bottom: 72px;
+                right: 16px;
+            }
+
+            section:not(.hero):not(.trust) {
+                padding: 85px 0;
+            }
+
+            .section-header {
+                display: block;
+                margin-bottom: 35px;
+            }
+
+            .section-header p {
+                margin-top: 20px;
+            }
+
+            .services,
+            .projects,
+            .pricing,
+            .faq,
+            .maintenance,
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .service {
+                min-height: 245px;
+            }
+
+            .expert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-afm {
+                grid-column: span 1;
+
+                display: flex;
+                flex-direction: column;
+
+                min-height: auto;
+
+                padding: 14px;
+
+                gap: 5px;
+            }
+
+            .project-image {
+                width: 100%;
+                height: 260px;
+                min-height: 260px;
+            }
+
+            .project-info {
+                padding:
+                    23px
+                    9px
+                    20px;
+            }
+
+            .project-info h3 {
+                font-size: 30px;
+            }
+
+            .project:not(.project-afm) {
+                min-height: 330px;
+            }
+
+            .project:not(.project-afm) h3 {
+                margin-top: 75px;
+            }
+
+            .cta {
+                display: block;
+
+                padding:
+                    42px
+                    25px;
+
+                border-radius: 25px;
+            }
+
+            .cta .buttons {
+                margin-top: 28px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                display: block;
+            }
+
+            .footer-bottom div + div {
+                margin-top: 8px;
+            }
+
+            .cookie-banner {
+                left: 14px;
+                right: 14px;
+                width: auto;
+                bottom: 14px;
+            }
+
+            .cookie-content {
+                display: block;
+            }
+
+            .cookie-actions {
+                margin-top: 15px;
+            }
+        }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+    <style>
+.ecommerce .price {
+    font-size: 36px;
+    line-height: 1.15;
+}
+</style>
+
+<style id="premium-monochrome-upgrade">
+/* =========================================================
+   PREMIUM MONOCHROME / EDITORIAL UPGRADE
+   Mahmut Gazi Avcı — Black & White Edition
+   ========================================================= */
+:root{
+  --bg:#050505!important;
+  --bg-2:#090909!important;
+  --surface:#0d0d0d!important;
+  --surface-2:#121212!important;
+  --surface-3:#1a1a1a!important;
+  --text:#fff!important;
+  --text-soft:#f2f2f2!important;
+  --muted:#a3a3a3!important;
+  --muted-2:#6f6f6f!important;
+  --accent:#fff!important;
+  --accent-light:#fff!important;
+  --accent-dark:#bdbdbd!important;
+  --gold:#fff!important;
+  --success:#fff!important;
+}
+html{scroll-behavior:smooth;background:#050505}
+body{background:#050505!important;color:#fff!important;overflow-x:hidden}
+body::selection{background:#fff;color:#000}
+.bg-grid{opacity:.34!important;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px)!important;background-size:72px 72px!important}
+.bg-orb{background:#fff!important;opacity:.025!important;filter:blur(110px)!important}
+.header{background:rgba(5,5,5,.78)!important;border-bottom:1px solid rgba(255,255,255,.09)!important;backdrop-filter:blur(22px)!important}
+.logo-box{background:#fff!important;color:#000!important;box-shadow:0 0 0 1px rgba(255,255,255,.2),0 12px 40px rgba(255,255,255,.08)!important}
+.logo-text span{color:#fff!important}
+.nav-links a{color:#bdbdbd!important}
+.nav-links a:hover{color:#fff!important}
+.nav-cta{background:#fff!important;color:#000!important;border-color:#fff!important}
+.nav-cta:hover{background:#000!important;color:#fff!important}
+.mobile-menu{color:#fff!important}
+.hero{position:relative;isolation:isolate;background:radial-gradient(circle at 78% 38%,rgba(255,255,255,.075),transparent 28%),linear-gradient(180deg,#050505 0%,#080808 72%,#050505 100%)!important}
+.hero::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent)!important}
+.hero h1{letter-spacing:-.065em!important;font-weight:800!important;line-height:.98!important}
+.hero h1 span{color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important}
+.hero-description{color:#aaa!important;max-width:690px!important}
+.hero .eyebrow,.section-eyebrow{color:#fff!important}
+.hero .eyebrow::before,.section-eyebrow::before{background:#fff!important}
+.hero-buttons a,.btn{border-radius:999px!important}
+.hero-buttons .btn-primary,.btn-primary{background:#fff!important;color:#000!important;border-color:#fff!important;box-shadow:0 15px 45px rgba(255,255,255,.09)!important}
+.hero-buttons .btn-primary:hover,.btn-primary:hover{background:#000!important;color:#fff!important}
+.hero-buttons .btn-secondary,.btn-secondary{background:rgba(255,255,255,.035)!important;color:#fff!important;border-color:rgba(255,255,255,.18)!important}
+.hero-card{background:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.025) 48%,rgba(0,0,0,.35))!important;border:1px solid rgba(255,255,255,.17)!important;box-shadow:0 35px 100px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.12)!important;border-radius:28px!important}
+.hero-card::before{background:linear-gradient(135deg,rgba(255,255,255,.3),transparent 35%)!important}
+.hero-overlay{background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.92) 100%)!important}
+.hero-info{background:rgba(5,5,5,.72)!important;border-color:rgba(255,255,255,.12)!important;backdrop-filter:blur(18px)!important}
+.hero-status{color:#ddd!important}
+.hero-status i{background:#fff!important;box-shadow:0 0 16px rgba(255,255,255,.65)!important}
+.floating{background:rgba(8,8,8,.82)!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 18px 50px rgba(0,0,0,.35)!important;backdrop-filter:blur(16px)!important}
+.trust{background:#090909!important;border-top:1px solid rgba(255,255,255,.07)!important;border-bottom:1px solid rgba(255,255,255,.07)!important}
+.trust-line{color:#777!important}
+.trust-line strong{color:#fff!important}
+section:not(.hero){background:#050505!important}
+.section-title{letter-spacing:-.045em!important}
+.card,.service-card,.project-card,.pricing-card,.faq-item,.process-card,.contact-card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015))!important;border:1px solid rgba(255,255,255,.105)!important;box-shadow:0 20px 70px rgba(0,0,0,.3)!important}
+.card:hover,.service-card:hover,.project-card:hover,.pricing-card:hover,.process-card:hover{border-color:rgba(255,255,255,.3)!important;transform:translateY(-5px)}
+.icon,.service-icon,.step-number{background:#fff!important;color:#000!important;border-color:#fff!important}
+.badge,.tag,.project-tag{background:rgba(255,255,255,.06)!important;color:#ddd!important;border-color:rgba(255,255,255,.12)!important}
+.price,.pricing-price{color:#fff!important}
+.pricing-card.featured{background:linear-gradient(145deg,#151515,#080808)!important;border-color:rgba(255,255,255,.4)!important;box-shadow:0 35px 100px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.04)!important}
+.pricing-card.featured::before{background:#fff!important;color:#000!important}
+.check,.feature-check{color:#fff!important}
+input,textarea,select{background:#0c0c0c!important;color:#fff!important;border-color:rgba(255,255,255,.13)!important}
+input:focus,textarea:focus,select:focus{border-color:#fff!important;box-shadow:0 0 0 3px rgba(255,255,255,.07)!important}
+::placeholder{color:#666!important}
+footer{background:#080808!important;border-top:1px solid rgba(255,255,255,.09)!important}
+.footer-title{color:#fff!important}
+.footer-links a{color:#858585!important}
+.footer-links a:hover{color:#fff!important}
+.footer-bottom{border-top-color:rgba(255,255,255,.09)!important;color:#666!important}
+.site-creator{color:#fff!important}
+.site-creator strong{color:#fff!important}
+.scroll-top{background:#fff!important;color:#000!important}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:#050505}
+::-webkit-scrollbar-thumb{background:#333;border-radius:20px;border:2px solid #050505}
+::-webkit-scrollbar-thumb:hover{background:#666}
+@media(max-width:800px){
+  .hero{background:linear-gradient(180deg,#050505,#090909)!important}
+  .hero h1{font-size:clamp(42px,12vw,72px)!important;letter-spacing:-.055em!important}
+  .hero-card{border-radius:22px!important}
+}
+</style>
+
+
+<style id="mga-premium-upgrade">
+/* =========================================================
+   MGA PREMIUM 2026 — Editorial / Luxury UI Upgrade
+   Mobile-first, iPhone/iPad safe-area and touch optimized
+   ========================================================= */
+:root{
+  --mga-bg:#050505;--mga-panel:#0b0b0b;--mga-panel2:#111;--mga-white:#fff;
+  --mga-soft:#e9e9e9;--mga-muted:#999;--mga-line:rgba(255,255,255,.12);
+  --mga-line2:rgba(255,255,255,.07);--mga-radius:24px;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:#050505}
+body{background:linear-gradient(180deg,#050505 0%,#090909 45%,#050505 100%);color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 75% 10%,rgba(255,255,255,.07),transparent 28%),radial-gradient(circle at 10% 55%,rgba(255,255,255,.035),transparent 25%)}
+.header{backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);background:rgba(5,5,5,.78)!important;border-bottom:1px solid var(--mga-line2)!important;padding-top:env(safe-area-inset-top)}
+.nav{min-height:78px}.logo{letter-spacing:-.03em}.logo-box{box-shadow:0 8px 30px rgba(255,255,255,.08)}
+.nav-links a{transition:.25s ease}.nav-links a:not(.nav-cta):hover{color:#fff;transform:translateY(-1px)}
+.nav-home{font-weight:700!important;color:#fff!important;position:relative}.nav-home:after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:#fff;opacity:.8}
+.nav-cta{border-radius:999px!important;box-shadow:0 8px 30px rgba(255,255,255,.08)}
+.hero{padding-top:clamp(100px,12vw,160px);padding-bottom:clamp(70px,9vw,120px)}
+.hero-grid{gap:clamp(42px,7vw,100px)}
+.hero h1{font-size:clamp(48px,7vw,96px);line-height:.98;letter-spacing:-.065em;max-width:900px}
+.hero h1 span{background:linear-gradient(100deg,#fff 0%,#999 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-description{max-width:680px;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:#b7b7b7}
+.eyebrow{letter-spacing:.16em;border-color:var(--mga-line);background:rgba(255,255,255,.035);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.btn{min-height:52px;border-radius:999px!important;padding-inline:25px!important;display:inline-flex;align-items:center;justify-content:center;touch-action:manipulation}
+.btn-primary{box-shadow:0 15px 45px rgba(255,255,255,.09)}
+.hero-card{border:1px solid var(--mga-line);box-shadow:0 30px 90px rgba(0,0,0,.45);border-radius:32px;overflow:hidden}
+.hero-card:after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.08);border-radius:inherit;pointer-events:none}
+.floating{background:rgba(10,10,10,.68)!important;border:1px solid rgba(255,255,255,.16)!important;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);box-shadow:0 15px 45px rgba(0,0,0,.3)}
+.trust{border-top:1px solid var(--mga-line2);border-bottom:1px solid var(--mga-line2);background:rgba(255,255,255,.015)}
+.trust-line{min-height:86px}.trust-item{font-size:11px;letter-spacing:.15em}
+section:not(.hero):not(.trust){position:relative}
+.about,.service-grid,.process-grid,.project-grid,.pricing-grid,.faq-grid,.contact-grid{position:relative}
+.about-title h2,h2{letter-spacing:-.045em}
+.about-content,.service-card,.process-card,.project-card,.pricing-card,.faq-item,.contact-card{border-color:var(--mga-line)!important}
+.service-card,.process-card,.pricing-card,.faq-item,.contact-card{background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))!important;box-shadow:0 20px 60px rgba(0,0,0,.18);transition:transform .3s ease,border-color .3s ease,background .3s ease}
+.service-card:hover,.process-card:hover,.pricing-card:hover,.faq-item:hover,.contact-card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.25)!important;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.018))!important}
+.kicker{letter-spacing:.18em;color:#8d8d8d}
+.skill{border-color:var(--mga-line)!important;background:rgba(255,255,255,.025)!important}
+.assurance-section{padding:0 0 clamp(70px,9vw,120px)}
+.assurance-card{display:grid;grid-template-columns:auto 1fr minmax(280px,420px);gap:28px;align-items:start;padding:clamp(24px,4vw,42px);border:1px solid var(--mga-line);border-radius:28px;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.018));box-shadow:0 25px 80px rgba(0,0,0,.25)}
+.assurance-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.28);font-size:20px}
+.assurance-label{font-size:10px;letter-spacing:.18em;color:#888}.assurance-copy h2{font-size:clamp(23px,3vw,38px);line-height:1.1;margin:.5rem 0 1rem}.assurance-copy p{color:#a7a7a7;line-height:1.7}
+.owner-note{margin-top:20px;padding-top:18px;border-top:1px solid var(--mga-line2);display:flex;flex-direction:column;gap:4px}.owner-note strong{font-size:10px;letter-spacing:.16em;color:#777;text-transform:uppercase}.owner-note span{font-weight:700;color:#fff}
+.footer-links a{transition:.2s}.footer-links a:hover{padding-left:3px}
+.mobile-menu{touch-action:manipulation}
+@media(max-width:900px){.assurance-card{grid-template-columns:auto 1fr}.hero{padding-top:90px}.nav-links{padding-bottom:calc(20px + env(safe-area-inset-bottom))}}
+@media(max-width:640px){
+  html{scroll-padding-top:76px}.nav{min-height:68px;padding-inline:18px}.logo-text{font-size:14px}.logo-box{width:38px!important;height:38px!important}
+  .hero{padding:82px 0 65px}.hero h1{font-size:clamp(44px,13vw,68px);letter-spacing:-.06em}.hero-description{font-size:16px;line-height:1.7}.buttons{display:grid;grid-template-columns:1fr;gap:10px}.btn{width:100%;min-height:54px}
+  .hero-card{border-radius:24px}.floating{font-size:8px!important;padding:8px 10px!important}.hero-info{padding:18px!important}.hero-info-top{gap:12px}.hero-info h3{font-size:17px!important}.hero-info p{font-size:11px!important}
+  .trust-line{display:grid!important;grid-template-columns:1fr 1fr;gap:0!important;min-height:auto}.trust-item{padding:17px 8px;border-bottom:1px solid var(--mga-line2)}
+  .about-title h2,h2{font-size:clamp(34px,10vw,52px)}.assurance-card{grid-template-columns:1fr;gap:18px;border-radius:22px}.assurance-icon{width:42px;height:42px}
+  .service-card,.process-card,.pricing-card,.faq-item,.contact-card{border-radius:20px!important}.footer-bottom{padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+}
+@media(hover:none){.service-card:hover,.process-card:hover,.pricing-card:hover,.faq-item:hover,.contact-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.service-card,.process-card,.pricing-card,.faq-item,.contact-card{transition:none}}
+</style>
+
+
+<style id="corporate-final-polish">
+/* AFM / MGA CORPORATE FINAL POLISH — 2026 */
+:root{
+  --corp-black:#070707;
+  --corp-panel:#101010;
+  --corp-panel-2:#151515;
+  --corp-white:#f7f7f5;
+  --corp-muted:#a8a8a3;
+  --corp-line:rgba(255,255,255,.13);
+  --corp-soft-line:rgba(255,255,255,.07);
+  --corp-accent:#d8d8d2;
+}
+body{background:linear-gradient(180deg,#060606 0%,#0a0a0a 48%,#060606 100%)!important;color:var(--corp-white)!important}
+.header{background:rgba(7,7,7,.86)!important;border-bottom:1px solid var(--corp-soft-line)!important}
+.logo-box{background:#f7f7f5!important;color:#080808!important}
+.hero h1 span{background:linear-gradient(100deg,#fff 0%,#bdbdb7 100%);-webkit-background-clip:text;background-clip:text}
+.service-card,.process-card,.pricing-card,.faq-item,.contact-card,.project{border-color:var(--corp-line)!important}
+.service-card:hover,.process-card:hover,.pricing-card:hover,.faq-item:hover,.contact-card:hover,.project:hover{border-color:rgba(255,255,255,.28)!important}
+.project-creator{display:flex;flex-direction:column;gap:4px;margin-top:18px;padding-top:14px;border-top:1px solid var(--corp-soft-line);font-size:12px}
+.project-creator strong{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#777}
+.project-creator span{font-weight:700;color:#eee}
+.price-card.featured{box-shadow:0 30px 90px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.08)}
+.price-card .price{letter-spacing:-.045em}
+.notice{border-color:var(--corp-line)!important;background:rgba(255,255,255,.025)!important}
+::selection{background:#f7f7f5;color:#070707}
+@media(max-width:640px){.project-creator{margin-top:15px}.price-card .price{font-size:clamp(30px,9vw,42px)}}
+</style>
+
+
+<style id="modern-readability-2026">
+/* =========================================================
+   MODERN READABILITY SYSTEM — 2026
+   Desktop • Tablet • Android • iPhone
+   ========================================================= */
+:root {
+    --reading-body: clamp(16px, 1.02vw, 18px);
+    --reading-small: clamp(14px, .9vw, 16px);
+    --reading-label: clamp(11px, .72vw, 13px);
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-padding-top: 88px;
+}
+
+body {
+    font-size: var(--reading-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+    font-size: var(--reading-body);
+    line-height: 1.72;
+}
+
+/* Küçük yardımcı metinler artık okunabilir ama hiyerarşik */
+small,
+.price-note,
+.legal-note span,
+.owner-note span {
+    font-size: var(--reading-small);
+    line-height: 1.6;
+}
+
+/* Etiketler: küçük fakat telefonda kaybolmayacak kadar büyük */
+.kicker,
+.project-tag,
+.service-number,
+.project-meta span,
+.popular,
+.eyebrow {
+    font-size: var(--reading-label);
+    line-height: 1.45;
+    letter-spacing: .12em;
+}
+
+/* Kart ve proje metinleri */
+.service-card p,
+.service p,
+.process-card p,
+.project p,
+.project-info p,
+.about-content p,
+.contact-card p {
+    font-size: clamp(15px, 1vw, 17px);
+    line-height: 1.72;
+}
+
+/* Paket özellikleri */
+.features li {
+    font-size: clamp(15px, 1vw, 17px);
+    line-height: 1.62;
+    margin-bottom: 9px;
+}
+
+/* Navigasyon */
+.nav-links a {
+    font-size: clamp(14px, .9vw, 16px);
+}
+
+/* Butonlar: erişilebilir dokunma alanı */
+.btn,
+.nav-cta {
+    font-size: clamp(14px, .9vw, 16px);
+    min-height: 50px;
+}
+
+/* Proje sahibi bilgisi */
+.project-creator {
+    font-size: clamp(14px, .9vw, 16px);
+    line-height: 1.55;
+}
+
+.project-creator strong {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Footer */
+footer p,
+.footer-links a {
+    font-size: clamp(14px, .9vw, 16px);
+    line-height: 1.65;
+}
+
+
+/* ========================= TABLET ========================= */
+@media (min-width: 641px) and (max-width: 1024px) {
+    body { font-size: 17px; }
+    p { font-size: 17px; line-height: 1.72; }
+
+    .service-card p,
+    .service p,
+    .process-card p,
+    .project p,
+    .project-info p,
+    .features li {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .nav-links a { font-size: 15px; }
+}
+
+/* ========================= TELEFON ========================= */
+@media (max-width: 640px) {
+    html {
+        scroll-padding-top: 76px;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.72;
+    }
+
+    .hero-description {
+        font-size: 17px !important;
+        line-height: 1.7 !important;
+    }
+
+    .service-card p,
+    .service p,
+    .process-card p,
+    .project p,
+    .project-info p,
+    .about-content p,
+    .contact-card p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .features li {
+        font-size: 16px;
+        line-height: 1.65;
+        margin-bottom: 8px;
+    }
+
+    .price-note {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .project-creator {
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    .project-creator strong {
+        font-size: 10px;
+        letter-spacing: .12em;
+    }
+
+    .footer-links a,
+    footer p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .kicker,
+    .project-tag,
+    .service-number,
+    .project-meta span,
+    .popular,
+    .eyebrow {
+        font-size: 11px;
+        line-height: 1.45;
+        letter-spacing: .10em;
+    }
+
+    .btn,
+    .nav-cta {
+        font-size: 16px;
+        min-height: 54px;
+    }
+
+    /* iPhone/Android'de metin taşmasını önler */
+    h1, h2, h3, p, li, a, span {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Çok küçük ekranlar — iPhone SE ve benzeri */
+@media (max-width: 380px) {
+    p,
+    .service-card p,
+    .service p,
+    .process-card p,
+    .project p,
+    .project-info p,
+    .features li {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .hero-description {
+        font-size: 16px !important;
+    }
+
+    .btn,
+    .nav-cta {
+        font-size: 15px;
+    }
+}
+
+/* Kullanıcı hareket azaltmayı seçtiyse animasyonları minimuma indir */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+</style>
+
+
+<style id="hero-name-subtitle-style">
+.hero-name-subtitle {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-size: clamp(14px, 1vw, 17px);
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: .01em;
+    color: #fff;
+}
+
+.hero-info p {
+    font-size: clamp(14px, .95vw, 16px);
+    line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+    .hero-name-subtitle {
+        margin-top: 6px;
+        margin-bottom: 7px;
+        font-size: 16px;
+    }
+
+    .hero-info p {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+}
+</style>
+
+<style id="final-readability-upgrade">
+/* =========================================================
+   FINAL READABILITY UPGRADE
+   Desktop / Tablet / Android / iPhone
+   ========================================================= */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #f2f2f2;
+}
+
+p {
+    color: #d2d2d2;
+    font-size: clamp(16px, 1vw, 18px);
+    line-height: 1.75;
+}
+
+.service p,
+.service-card p,
+.project p,
+.project-info p {
+    color: #d6d6d6;
+    font-size: clamp(15.5px, 1vw, 17px);
+    line-height: 1.72;
+}
+
+.features li {
+    color: #e0e0e0;
+    font-size: clamp(15px, .95vw, 17px);
+    line-height: 1.65;
+}
+
+.price-note {
+    color: #c2c2c2;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.kicker,
+.project-tag,
+.project-meta span,
+.service-number {
+    color: #c9c9c9;
+    font-size: clamp(11px, .72vw, 13px);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.project-meta span {
+    color: #c8c8c8;
+}
+
+footer p,
+.footer-links a {
+    color: #c9c9c9;
+    font-size: clamp(14px, .9vw, 16px);
+    line-height: 1.7;
+}
+
+.owner-note strong {
+    color: #aaa;
+    font-size: 11px;
+}
+
+.owner-note span {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.btn,
+.nav-cta {
+    font-size: clamp(14px, .9vw, 16px);
+    font-weight: 700;
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    body { font-size: 17px; }
+
+    p,
+    .service p,
+    .service-card p,
+    .project p,
+    .project-info p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .features li { font-size: 16px; }
+    footer p, .footer-links a { font-size: 15px; }
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    p,
+    .service p,
+    .service-card p,
+    .project p,
+    .project-info p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .features li {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .price-note {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    footer p,
+    .footer-links a {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .kicker,
+    .project-tag,
+    .project-meta span,
+    .service-number {
+        font-size: 11px;
+        line-height: 1.45;
+    }
+
+    .btn {
+        font-size: 16px;
+        min-height: 54px;
+    }
+}
+
+@media (max-width: 380px) {
+    p,
+    .service p,
+    .service-card p,
+    .project p,
+    .project-info p,
+    .features li {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+}
+</style>
+
+</head>
+
+
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header class="header" id="header">
+
+        <div class="container nav">
+
+            <a
+                href="#anasayfa"
+                class="logo"
+                aria-label="Mahmut Gazi Avcı ana sayfa"
+            >
+
+                <div class="logo-box">
+                    MGA
+                </div>
+
+                <div class="logo-text">
+                    Mahmut Gazi Avcı | Web Tasarım ve Kodlamma <span> </span>
+                </div>
+
+            </a>
+
+
+            <nav
+                class="nav-links"
+                id="navLinks"
+                aria-label="Ana menü"
+            >
+
+                <a href="#anasayfa" class="nav-home" aria-current="page">Ana Sayfa</a>
+                <a href="#hakkimda">Hakkımda</a>
+                <a href="#hizmetler">Hizmetler</a>
+                <a href="#surec">Süreç</a>
+                <a href="#projeler">Projeler</a>
+                <a href="#paketler">Paketler</a>
+                <a href="#sss">SSS</a>
+                <a href="#iletisim">İletişim</a>
+
+                <a
+                    href="#iletisim"
+                    class="nav-cta"
+                >
+                    Proje Başlat →
+                </a>
+
+            </nav>
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Menüyü aç"
+                aria-expanded="false"
+                aria-controls="navLinks"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main id="anasayfa">
+
+
+        <!-- =================================================
+             HERO
+        ================================================= -->
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <div class="reveal">
+
+                    <div class="eyebrow">
+                        <span class="dot"></span>
+                        PREMIUM WEB TASARIM & DİJİTAL ÇÖZÜMLER
+                    </div>
+
+
+                    <h1>
+                        Markanız için<br>
+                        <span>üst düzey dijital deneyim.</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Markanızın güven veren yüzünü dijitalde oluşturuyorum.
+                        Strateji, özgün arayüz, hızlı altyapı, güçlü mobil deneyim
+                        ve sürdürülebilir teknik yapı aynı projede buluşuyor.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#paketler"
+                            class="btn btn-primary"
+                        >
+                            Paketleri İncele →
+                        </a>
+
+                        <a
+                            href="#iletisim"
+                            class="btn btn-secondary"
+                        >
+                            Ücretsiz Proje Görüşmesi
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div
+                    class="hero-card reveal"
+                    id="heroCard"
+                >
+
+                    <img
+                        src="assets/fotoğrafim.jpeg"
+                        alt="Mahmut Gazi Avcı"
+                        class="hero-photo"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+
+                    <div class="hero-overlay"></div>
+
+
+                    <div class="floating f1">
+                        WEB DESIGN
+                    </div>
+
+                    <div class="floating f2">
+                        WEB DEVELOPMENT
+                    </div>
+
+                    <div class="floating f3">
+                        MOBILE FIRST
+                    </div>
+
+                    <div class="floating f4">
+                        PERFORMANCE
+                    </div>
+
+
+                    <div class="hero-info">
+
+                        <div class="hero-info-top">
+
+                            <div>
+
+                                <h3>
+                                    Mahmut Gazi Avcı | Web Tasarım ve Kodlama
+                                </h3>
+
+                                <div class="hero-name-subtitle">
+                                    Web Tasarım &amp; Kodlama
+                                </div>
+
+                                <p>
+                                    Modern, hızlı ve mobil uyumlu web siteleri tasarlıyor;
+                                    tasarım, kodlama ve performansı bir araya getirerek
+                                    markalar için güçlü dijital deneyimler geliştiriyorum.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             TRUST
+        ================================================= -->
+
+        <section class="trust">
+
+            <div class="container">
+
+                <div class="trust-line">
+
+                    <div class="trust-item">
+                        Özgün Tasarım
+                    </div>
+
+                    <div class="trust-item">
+                        Mobil Öncelikli
+                    </div>
+
+                    <div class="trust-item">
+                        SEO Altyapısı
+                    </div>
+
+                    <div class="trust-item">
+                        Performans Odaklı
+                    </div>
+
+                    <div class="trust-item">
+                        Modern Teknoloji
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ABOUT
+        ================================================= -->
+
+        <section id="hakkimda">
+
+            <div class="container">
+
+                <div class="about">
+
+                    <div class="about-title reveal">
+
+                        <div class="kicker">
+                            01 / Hakkımda
+                        </div>
+
+                        <h2>
+                            Sadece bir web sitesi değil,<br>
+                            güçlü bir dijital kimlik.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="about-content reveal">
+
+                        <h3 class="expert-title">
+                            Markanız için
+                            <span>
+                                doğru dijital deneyim.
+                            </span>
+                        </h3>
+
+
+                        <p>
+                            Bir web sitesini yalnızca estetik bir ekran olarak değil;
+                            markanızın güven, iletişim ve satış yolculuğunun merkezindeki
+                            stratejik bir dijital varlık olarak ele alıyorum.
+                        </p>
+
+
+                        <p>
+                            Modern arayüz tasarımı, kullanıcı deneyimi, performans,
+                            mobil uyumluluk, SEO altyapısı ve iş hedeflerini birlikte
+                            değerlendirerek işletmenize özel, uzun vadeli çözümler geliştiriyorum.
+                        </p>
+
+
+                        <div class="skills">
+
+                            <span class="skill">HTML / CSS</span>
+                            <span class="skill">JavaScript</span>
+                            <span class="skill">Responsive Design</span>
+                            <span class="skill">SEO</span>
+                            <span class="skill">E-Commerce</span>
+                            <span class="skill">UI / UX</span>
+                            <span class="skill">Web Performance</span>
+                            <span class="skill">WordPress</span>
+
+                        </div>
+
+
+                        <div class="expert-grid">
+
+                            <div class="expert-box">
+                                <strong>Özgün Tasarım</strong>
+                                <span>Markaya özel arayüzler</span>
+                            </div>
+
+                            <div class="expert-box">
+                                <strong>Mobil Öncelikli</strong>
+                                <span>Tüm ekranlara uyum</span>
+                            </div>
+
+                            <div class="expert-box">
+                                <strong>SEO Altyapısı</strong>
+                                <span>Arama motoru dostu yapı</span>
+                            </div>
+
+                            <div class="expert-box">
+                                <strong>Performans</strong>
+                                <span>Optimize edilmiş kod</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stats reveal">
+
+                    <div class="stat">
+                        <strong><span>01</span></strong>
+                        <p>Özgün tasarım yaklaşımı</p>
+                    </div>
+
+                    <div class="stat">
+                        <strong><span>100%</span></strong>
+                        <p>Responsive geliştirme</p>
+                    </div>
+
+                    <div class="stat">
+                        <strong><span>SEO</span></strong>
+                        <p>Teknik altyapı odaklı</p>
+                    </div>
+
+                    <div class="stat">
+                        <strong><span>∞</span></strong>
+                        <p>Özel proje esnekliği</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SERVICES
+        ================================================= -->
+
+        <section id="hizmetler">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            02 / Hizmetler
+                        </div>
+
+                        <h2>
+                            Ne yapıyorum?
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        İşletmenizin ihtiyacına göre tasarım,
+                        geliştirme, optimizasyon ve dijital
+                        büyüme çözümleri.
+                    </p>
+
+                </div>
+
+
+                <div class="services">
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">✦</div>
+
+                        <div class="service-number">01</div>
+
+                        <h3>Web Tasarım</h3>
+
+                        <p>
+                            Markanıza özel, modern, premium ve
+                            kullanıcı deneyimi odaklı web arayüzleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">⌘</div>
+
+                        <div class="service-number">02</div>
+
+                        <h3>Web Geliştirme</h3>
+
+                        <p>
+                            Performanslı, güvenli, responsive ve
+                            işletmenizin ihtiyaçlarına uygun
+                            web çözümleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">◈</div>
+
+                        <div class="service-number">03</div>
+
+                        <h3>E-Ticaret</h3>
+
+                        <p>
+                            Ürün, ödeme, kargo, kampanya ve satış
+                            süreçlerini bir araya getiren
+                            e-ticaret çözümleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">⌁</div>
+
+                        <div class="service-number">04</div>
+
+                        <h3>SEO</h3>
+
+                        <p>
+                            Teknik SEO, performans, yapılandırılmış
+                            veri ve arama motoru altyapısı.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">▣</div>
+
+                        <div class="service-number">05</div>
+
+                        <h3>Kurumsal Web</h3>
+
+                        <p>
+                            Şirketinizin güvenilirliğini ve profesyonel
+                            kimliğini yansıtan kurumsal web siteleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="service reveal">
+
+                        <div class="service-icon">∞</div>
+
+                        <div class="service-number">06</div>
+
+                        <h3>Özel Yazılım</h3>
+
+                        <p>
+                            Standart paketlerin dışında kalan özel
+                            ihtiyaçlar için proje bazlı web uygulamaları.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROCESS
+        ================================================= -->
+
+        <section id="surec">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            03 / Süreç
+                        </div>
+
+                        <h2>
+                            Nasıl<br>
+                            çalışıyoruz?
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Projenizi fikir aşamasından yayına kadar
+                        planlı, şeffaf ve profesyonel şekilde
+                        ilerletiyoruz.
+                    </p>
+
+                </div>
+
+
+                <div class="process">
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">01</div>
+
+                        <h3>Keşif & Analiz</h3>
+
+                        <p>
+                            İhtiyaçlarınızı, hedef kitlenizi,
+                            rakiplerinizi ve projenizin hedeflerini
+                            analiz ediyoruz.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">02</div>
+
+                        <h3>Tasarım</h3>
+
+                        <p>
+                            Markanıza uygun görsel dil, kullanıcı
+                            deneyimi ve sayfa mimarisini oluşturuyoruz.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">03</div>
+
+                        <h3>Geliştirme</h3>
+
+                        <p>
+                            Tasarımı performanslı, responsive ve
+                            SEO uyumlu bir web yapısına dönüştürüyoruz.
+                        </p>
+
+                    </article>
+
+
+                    <article class="process-card reveal">
+
+                        <div class="process-number">04</div>
+
+                        <h3>Yayın & Destek</h3>
+
+                        <p>
+                            Testleri tamamlıyor, sitenizi yayına alıyor
+                            ve teslim sonrası destek seçenekleri
+                            sunuyoruz.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROJECTS
+        ================================================= -->
+
+        <section id="projeler">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            04 / Projeler
+                        </div>
+
+                        <h2>
+                            Dijital<br>
+                            deneyimler.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Farklı sektörlerin ihtiyaçlarına göre
+                        tasarlanan, performans ve kullanıcı
+                        deneyimini merkeze alan projeler.
+                    </p>
+
+                </div>
+
+
+                <div class="projects">
+
+
+                    <!-- AFM -->
+
+                    <article class="project project-afm reveal">
+
+                        <div class="project-image">
+
+                            <img
+                                src="assets/afm-logo.jpeg"
+                                alt="AFM Yapım"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div class="project-info">
+
+                            <div class="project-tag">
+                                ÖZEL PROJE / YAPIM
+                            </div>
+
+                            <h3>
+                                AFM Yapım
+                            </h3>
+
+                            <p>
+                                Sinema, televizyon ve yapım sektörüne
+                                yönelik modern dijital kurumsal yapı.
+                                AFM Yapım için marka kimliğini ön plana
+                                çıkaran güçlü görsel dil ve profesyonel
+                                web deneyimi, Mahmut Gazi Avcı tarafından
+                                tasarlanıp geliştirildi.
+                            </p>
+
+
+                            <div class="project-meta">
+
+                                <span>Kurumsal Web</span>
+                                <span>Responsive</span>
+                                <span>Premium Tasarım</span>
+                                <span>SEO Altyapısı</span>
+
+                            </div>
+
+                            <div class="project-creator" aria-label="Proje tasarım ve geliştirme bilgisi">
+                                <strong>Proje Tasarım &amp; Geliştirme</strong>
+                                <span>Mahmut Gazi Avcı</span>
+                            </div>
+
+
+                            <a
+                                href="https://afmyapim.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-link"
+                            >
+                                Projeyi İncele →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="project reveal">
+
+                        <div class="project-tag">
+                            KURUMSAL
+                        </div>
+
+                        <h3>
+                            Kurumsal Web Siteleri
+                        </h3>
+
+                        <p>
+                            Markanın dijital kimliğini güçlendiren,
+                            güven veren ve potansiyel müşterileri
+                            harekete geçiren web deneyimleri.
+                        </p>
+
+                        <a
+                            href="#iletisim"
+                            class="project-link"
+                        >
+                            Proje oluştur →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project reveal">
+
+                        <div class="project-tag">
+                            E-COMMERCE
+                        </div>
+
+                        <h3>
+                            Online Satış Sistemleri
+                        </h3>
+
+                        <p>
+                            Ürün, ödeme, kargo, stok ve müşteri
+                            süreçlerini bir araya getiren modern
+                            e-ticaret altyapıları.
+                        </p>
+
+                        <a
+                            href="#iletisim"
+                            class="project-link"
+                        >
+                            Proje oluştur →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project reveal">
+
+                        <div class="project-tag">
+                            LANDING PAGE
+                        </div>
+
+                        <h3>
+                            Dönüşüm Odaklı Sayfalar
+                        </h3>
+
+                        <p>
+                            Reklam, kampanya ve ürün lansmanları
+                            için hızlı, net ve aksiyon odaklı
+                            landing page çözümleri.
+                        </p>
+
+                        <a
+                            href="#iletisim"
+                            class="project-link"
+                        >
+                            Proje oluştur →
+                        </a>
+
+                    </article>
+
+
+                    <article class="project reveal">
+
+                        <div class="project-tag">
+                            ÖZEL PROJE
+                        </div>
+
+                        <h3>
+                            Dijital Platformlar
+                        </h3>
+
+                        <p>
+                            Yönetim panelleri, otomasyonlar,
+                            API bağlantıları, üyelik sistemleri
+                            ve işletmeye özel web uygulamaları.
+                        </p>
+
+                        <div class="project-creator">
+                            <strong>Proje Tasarım &amp; Geliştirme</strong>
+                            <span>Mahmut Gazi Avcı</span>
+                        </div>
+
+                        <a
+                            href="#iletisim"
+                            class="project-link"
+                        >
+                            Proje oluştur →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PRICING
+        ================================================= -->
+
+        <section id="paketler">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            05 / Paketler
+                        </div>
+
+                        <h2>
+                            Yatırımınız<br>
+                            net olsun.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Paketler proje kapsamlarına göre
+                        başlangıç fiyatları olarak hazırlanmıştır.
+                    </p>
+
+                </div>
+
+
+                <div class="pricing">
+
+
+                    <article class="price-card reveal">
+
+                        <h3>Başlangıç</h3>
+
+                        <div class="price">
+                            15.900 TL
+                        </div>
+
+                        <div class="price-note">
+                            Tek seferlik proje 
+                        </div>
+
+                        <ul class="features">
+
+                            <li>Tek sayfa / landing page</li>
+                            <li>Özgün responsive tasarım</li>
+                            <li>Mobil uyumluluk</li>
+                            <li>WhatsApp iletişim butonu</li>
+                            <li>İletişim formu</li>
+                            <li>Temel teknik SEO</li>
+                            <li>Google Maps entegrasyonu</li>
+                            <li>SSL yönlendirmeleri</li>
+                            <li>Hız optimizasyonu</li>
+
+                        </ul>
+
+                        <a
+                            href="#iletisim"
+                            class="btn btn-secondary"
+                        >
+                            Başlangıç İçin Teklif Al
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card featured reveal">
+
+                        <div class="popular">
+                            EN ÇOK TERCİH EDİLEN
+                        </div>
+
+                        <h3>Profesyonel</h3>
+
+                        <div class="price">
+                            34.900 TL
+                        </div>
+
+                        <div class="price-note">
+                            Tek seferlik proje 
+                        </div>
+
+                        <ul class="features">
+
+                            <li>5–10 özel tasarım sayfa</li>
+                            <li>Premium UI/UX</li>
+                            <li>Mobil öncelikli yapı</li>
+                            <li>Yönetilebilir içerik alanları</li>
+                            <li>Blog / haber sistemi</li>
+                            <li>İletişim & teklif formları</li>
+                            <li>Teknik SEO altyapısı</li>
+                            <li>Google Analytics kurulumu</li>
+                            <li>Search Console kurulumu</li>
+                            <li>WhatsApp entegrasyonu</li>
+                            <li>Performans optimizasyonu</li>
+                            <li>Yayın öncesi test</li>
+
+                        </ul>
+
+                        <a
+                            href="#iletisim"
+                            class="btn btn-primary"
+                        >
+                            Profesyonel Paket
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card reveal">
+
+                        <h3>Kurumsal</h3>
+
+                        <div class="price">
+                            59.900 TL
+                        </div>
+
+                        <div class="price-note">
+                            Tek seferlik proje 
+                        </div>
+
+                        <ul class="features">
+
+                            <li>10–20+ sayfa</li>
+                            <li>Premium özel tasarım</li>
+                            <li>Gelişmiş içerik yönetimi</li>
+                            <li>Blog / içerik yönetimi</li>
+                            <li>Gelişmiş teknik SEO</li>
+                            <li>Schema yapılandırılmış veri</li>
+                            <li>Çoklu dil altyapısı</li>
+                            <li>Analytics & Search Console</li>
+                            <li>Teklif / başvuru sistemi</li>
+                            <li>Core Web Vitals optimizasyonu</li>
+                            <li>Temel üçüncü taraf entegrasyonlar</li>
+                            <li>Yayın sonrası teknik destek</li>
+
+                        </ul>
+
+                        <a
+                            href="#iletisim"
+                            class="btn btn-secondary"
+                        >
+                            Kurumsal Teklif Al
+                        </a>
+
+                    </article>
+
+
+                    <article class="price-card reveal">
+
+                        <h3>E-Ticaret</h3>
+
+                        <div class="price">
+                            79.900 TL'den 
+                            başlayan
+                    
+                        </div>
+
+                        <div class="price-note">
+                            Proje kapsamına göre fiyatlandırılır 
+                        </div>
+
+                        <ul class="features">
+
+                            <li>E-ticaret altyapısı</li>
+                            <li>Ürün / kategori yönetimi</li>
+                            <li>Sepet & ödeme sistemi</li>
+                            <li>Kargo entegrasyonu</li>
+                            <li>Ödeme kuruluşu entegrasyonu</li>
+                            <li>Kupon / kampanya sistemi</li>
+                            <li>Mobil uyumlu tasarım</li>
+                            <li>Temel SEO altyapısı</li>
+                            <li>Analytics</li>
+                            <li>Search Console</li>
+                            <li>Yönetim paneli</li>
+                            <li>Güvenlik & performans optimizasyonu</li>
+
+                        </ul>
+
+                        <a
+                            href="#iletisim"
+                            class="btn btn-secondary"
+                        >
+                            E-Ticaret Teklifi Al
+                        </a>
+
+                    </article>
+
+                </div>
+
+
+                <div class="notice reveal">
+
+                    <strong>Fiyatlandırma notu:</strong>
+
+                    Belirtilen fiyatlar 2026 yılı için başlangıç proje fiyatlarıdır
+                    ve KDV hariçtir. Özel yazılım, gelişmiş entegrasyonlar, içerik üretimi,
+                    lisanslar ve üçüncü taraf servis bedelleri ayrıca fiyatlandırılabilir. Alan adı, hosting, premium
+                    tema/eklenti lisansları, ödeme kuruluşu
+                    komisyonları, üçüncü taraf servis ücretleri
+                    ve kapsam dışı özel entegrasyonlar ayrıca
+                    fiyatlandırılabilir.
+
+                    Projenin kesin bedeli ihtiyaç analizi ve
+                    kapsam onayından sonra yazılı teklif ile
+                    belirlenir.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MAINTENANCE
+        ================================================= -->
+
+        <section>
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            06 / Süreklilik
+                        </div>
+
+                        <h2>
+                            Site yayına<br>
+                            alındıktan sonra.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        İsterseniz projenizin yayın sonrası bakım,
+                        güvenlik, güncelleme ve teknik ihtiyaçlarını
+                        da yönetebiliriz.
+                    </p>
+
+                </div>
+
+
+                <div class="maintenance">
+
+                    <article class="maintenance-card reveal">
+
+                        <h3>Essential</h3>
+
+                        <div class="maintenance-price">
+                            1.990 TL
+                            <span>/ ay</span>
+                        </div>
+
+                        <p>
+                            Temel teknik kontroller, güncelleme,
+                            güvenlik kontrolleri ve küçük içerik
+                            değişiklikleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="maintenance-card reveal">
+
+                        <h3>Professional</h3>
+
+                        <div class="maintenance-price">
+                            3.990 TL
+                            <span>/ ay</span>
+                        </div>
+
+                        <p>
+                            Düzenli bakım, performans takibi,
+                            güvenlik, içerik desteği ve teknik
+                            geliştirme talepleri.
+                        </p>
+
+                    </article>
+
+
+                    <article class="maintenance-card reveal">
+
+                        <h3>Premium</h3>
+
+                        <div class="maintenance-price">
+                            7.500 TL
+                            <span>/ ay</span>
+                        </div>
+
+                        <p>
+                            Öncelikli teknik destek, sürekli
+                            optimizasyon, gelişmiş bakım ve aylık
+                            performans değerlendirmesi.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================= -->
+
+        <section id="iletisim">
+
+            <div class="container">
+
+                <div class="cta reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            07 / Projeniz
+                        </div>
+
+                        <h2>
+                            Fikriniz varsa,<br>
+                            başlayabiliriz.
+                        </h2>
+
+                        <p>
+                            Projenizin kapsamını anlatın.
+                            İhtiyacınızı değerlendirelim,
+                            size uygun teknoloji, süreç ve
+                            fiyatlandırmayı birlikte netleştirelim.
+                        </p>
+
+                    </div>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="mailto:avcigazi76@gmail.com?subject=Web%20Projesi%20Hakkında"
+                            class="btn btn-primary"
+                        >
+                            E-posta Gönder →
+                        </a>
+
+                        <a
+                            href="https://wa.me/905510895485"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn btn-secondary"
+                        >
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FAQ
+        ================================================= -->
+
+        <section id="sss">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <div>
+
+                        <div class="kicker">
+                            08 / SSS
+                        </div>
+
+                        <h2>
+                            Sık sorulanlar.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Proje başlamadan önce en çok merak edilen
+                        soruların kısa cevapları.
+                    </p>
+
+                </div>
+
+
+                <div class="faq">
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Web sitesi ne kadar sürede hazırlanır?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Proje kapsamına göre değişir.
+                                Landing page projeleri genellikle
+                                5–10 iş günü, profesyonel kurumsal
+                                projeler 10–20 iş günü içerisinde
+                                tamamlanabilir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Fiyatlara KDV dahil mi?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Hayır. Sitede belirtilen paket fiyatları
+                                KDV hariç başlangıç fiyatlarıdır.
+                                Kesin proje bedeli kapsam belirlendikten
+                                sonra yazılı olarak sunulur.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Domain ve hosting fiyata dahil mi?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Alan adı, hosting, premium lisanslar ve
+                                üçüncü taraf servis ücretleri standart
+                                proje fiyatlarına dahil değildir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            SEO hizmeti pakete dahil mi?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Paketlerde temel teknik SEO altyapısı
+                                bulunur. Kapsamlı SEO danışmanlığı,
+                                içerik üretimi, backlink, yerel SEO
+                                ve sürekli SEO çalışmaları ayrıca
+                                planlanabilir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Ödeme nasıl yapılır?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Ödeme yöntemi ve ödeme planı projenin
+                                kapsamına göre teklif aşamasında
+                                belirlenir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Teslim sonrası destek var mı?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Teslim sonrası destek kapsamı teklif
+                                ve sözleşmede belirlenir. Sürekli bakım,
+                                güvenlik ve teknik destek için aylık
+                                bakım paketlerinden yararlanılabilir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            İçerikleri siz hazırlıyor musunuz?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Temel paketlerde içerikler müşteriden
+                                sağlanır. Profesyonel içerik yazımı,
+                                ürün açıklamaları ve SEO içerikleri
+                                proje kapsamına göre ayrıca planlanabilir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="faq-item reveal">
+
+                        <button
+                            class="faq-question"
+                            type="button"
+                            aria-expanded="false"
+                        >
+                            Özel yazılım yaptırabilir miyim?
+                            <span>+</span>
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Evet. Üyelik sistemleri, yönetim panelleri,
+                                API entegrasyonları, otomasyonlar,
+                                rezervasyon sistemleri ve işletmeye özel
+                                web uygulamaları proje bazında geliştirilebilir.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PROFESSIONAL ASSURANCE
+    ===================================================== -->
+
+    <section class="assurance-section" aria-label="Kurumsal bilgilendirme">
+        <div class="container">
+            <div class="assurance-card">
+                <div class="assurance-icon">✓</div>
+                <div class="assurance-copy">
+                    <span class="assurance-label">KURUMSAL ŞEFFAFLIK</span>
+                    <h2>Bu web sitesinin gerçek sahibi ve işletmecisi <strong>Mahmut Gazi Avcı</strong>'dır.</h2>
+                    <p>Site; web tasarım, geliştirme ve dijital hizmetlerin sunulması amacıyla Mahmut Gazi Avcı tarafından yönetilmektedir.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <a
+                        href="#anasayfa"
+                        class="logo"
+                    >
+
+                        <div class="logo-box">
+                            MGA
+                        </div>
+
+                        <div class="logo-text">
+                            Mahmut Gazi <span>Avcı</span>
+                        </div>
+
+                    </a>
+
+
+                    <p>
+                        Premium web tasarım, web geliştirme,
+                        e-ticaret, SEO ve işletmelere özel
+                        dijital çözümler.
+                    </p>
+
+                    <div class="owner-note">
+                        <strong>Site Sahibi &amp; İşletmecisi</strong>
+                        <span>Mahmut Gazi Avcı</span>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="footer-title">
+                        Navigasyon
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a href="#anasayfa">Ana Sayfa</a>
+                        <a href="#hakkimda">Hakkımda</a>
+                        <a href="#hizmetler">Hizmetler</a>
+                        <a href="#surec">Süreç</a>
+                        <a href="#projeler">Projeler</a>
+                        <a href="#paketler">Paketler</a>
+                        <a href="#iletisim">İletişim</a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="footer-title">
+                        Yasal
+                    </div>
+
+                    <div class="footer-links">
+
+                        <a
+                            href="#"
+                            data-modal="kvkk"
+                        >
+                            KVKK Aydınlatma
+                        </a>
+
+                        <a
+                            href="#"
+                            data-modal="privacy"
+                        >
+                            Gizlilik Politikası
+                        </a>
+
+                        <a
+                            href="#"
+                            data-modal="cookie"
+                        >
+                            Çerez Politikası
+                        </a>
+
+                        <a
+                            href="#"
+                            data-modal="distance"
+                        >
+                            Mesafeli Hizmet
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <div>
+                    © 2026 Mahmut Gazi Avcı. Tüm hakları saklıdır.
+                </div>
+
+                <div>
+                    mahmutgaziavci.com • Web Tasarım & Dijital Çözümler
+                </div>
+
+                <div class="site-creator">
+                    Tasarım &amp; Geliştirme: <strong>Mahmut Gazi Avcı</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         KVKK MODAL
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="modal-kvkk"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="kvkk-title"
+    >
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2 id="kvkk-title">
+                    KVKK Aydınlatma Metni
+                </h2>
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-content">
+
+                <div class="notice">
+                    Bu metin genel bir internet sitesi taslağıdır.
+                    Gerçek veri işleme faaliyetleri, kullanılan
+                    servisler, işletme yapısı ve güncel mevzuat
+                    dikkate alınarak yayına almadan önce uzman
+                    tarafından kontrol edilmelidir.
+                </div>
+
+
+                <h3>1. Veri Sorumlusu</h3>
+
+                <p>
+                    6698 sayılı Kişisel Verilerin Korunması Kanunu
+                    kapsamında veri sorumlusu Mahmut Gazi Avcı'dır.
+                </p>
+
+                <p>
+                    Adres: [BURSA]
+                </p>
+
+                <p>
+                    E-posta: avcigazi76@gmail.com
+                </p>
+
+
+                <h3>2. İşlenen Kişisel Veriler</h3>
+
+                <p>
+                    İletişim veya teklif talepleri kapsamında
+                    ad-soyad, telefon numarası, e-posta adresi
+                    ve kullanıcı tarafından paylaşılan diğer
+                    bilgiler işlenebilir.
+                </p>
+
+
+                <h3>3. İşleme Amaçları</h3>
+
+                <ul>
+                    <li>İletişim taleplerinin cevaplandırılması</li>
+                    <li>Teklif süreçlerinin yürütülmesi</li>
+                    <li>Sözleşme ve hizmet süreçlerinin yürütülmesi</li>
+                    <li>Müşteri ilişkilerinin yönetilmesi</li>
+                    <li>Bilgi güvenliği süreçlerinin yürütülmesi</li>
+                    <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+                </ul>
+
+
+                <h3>4. Hukuki Sebep</h3>
+
+                <p>
+                    Kişisel veriler KVKK'nın 5. maddesinde belirtilen
+                    hukuki sebepler çerçevesinde işlenebilir.
+                </p>
+
+
+                <h3>5. Aktarım</h3>
+
+                <p>
+                    Veriler, hizmetin yürütülmesi için gerekli olması
+                    halinde hosting, e-posta, analiz, iletişim,
+                    ödeme veya teknik altyapı hizmet sağlayıcılarına
+                    aktarılabilir.
+                </p>
+
+
+                <h3>6. Saklama</h3>
+
+                <p>
+                    Kişisel veriler, işleme amacının gerektirdiği
+                    süre boyunca ve ilgili mevzuatta belirtilen
+                    saklama süreleri dikkate alınarak muhafaza edilir.
+                </p>
+
+
+                <h3>7. İlgili Kişinin Hakları</h3>
+
+                <p>
+                    İlgili kişiler KVKK'nın 11. maddesi kapsamında
+                    mevzuatta düzenlenen haklarını kullanabilir.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PRIVACY MODAL
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="modal-privacy"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="privacy-title"
+    >
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2 id="privacy-title">
+                    Gizlilik Politikası
+                </h2>
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-content">
+
+                <h3>1. Genel</h3>
+
+                <p>
+                    Mahmut Gazi Avcı olarak ziyaretçilerimizin
+                    ve müşterilerimizin gizliliğine önem veriyoruz.
+                </p>
+
+
+                <h3>2. Toplanan Bilgiler</h3>
+
+                <p>
+                    İletişim talepleri ve doğrudan iletişim kanalları
+                    üzerinden kullanıcı tarafından sağlanan bilgiler
+                    işlenebilir.
+                </p>
+
+
+                <h3>3. Teknik Bilgiler</h3>
+
+                <p>
+                    Kullanılan altyapıya bağlı olarak IP adresi,
+                    tarayıcı türü, cihaz bilgileri ve ziyaret
+                    istatistikleri gibi teknik veriler işlenebilir.
+                </p>
+
+
+                <h3>4. Kullanım Amaçları</h3>
+
+                <ul>
+                    <li>Taleplere cevap vermek</li>
+                    <li>Teklif hazırlamak</li>
+                    <li>Hizmet sunmak</li>
+                    <li>Web sitesi güvenliğini sağlamak</li>
+                    <li>Site performansını analiz etmek</li>
+                    <li>Yasal yükümlülükleri yerine getirmek</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         COOKIE MODAL
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="modal-cookie"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cookie-title"
+    >
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2 id="cookie-title">
+                    Çerez Politikası
+                </h2>
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-content">
+
+                <h3>1. Çerez Nedir?</h3>
+
+                <p>
+                    Çerezler, ziyaret edilen internet siteleri
+                    tarafından tarayıcı aracılığıyla cihazınıza
+                    kaydedilebilen küçük veri dosyalarıdır.
+                </p>
+
+
+                <h3>2. Çerez Türleri</h3>
+
+                <ul>
+
+                    <li>
+                        <strong>Zorunlu çerezler:</strong>
+                        Sitenin temel fonksiyonları için gerekli olabilir.
+                    </li>
+
+                    <li>
+                        <strong>Analitik çerezler:</strong>
+                        Site kullanımının analiz edilmesine yardımcı olabilir.
+                    </li>
+
+                    <li>
+                        <strong>İşlevsel çerezler:</strong>
+                        Tercihlerin hatırlanmasını sağlayabilir.
+                    </li>
+
+                </ul>
+
+
+                <div class="notice">
+                    Bu sitedeki tercih ekranı, ziyaretçi tercihinin
+                    tarayıcıdaki localStorage alanında tutulması için
+                    kullanılmaktadır. Gerçek analitik veya pazarlama
+                    araçları kullanılacaksa ilgili aydınlatma ve
+                    onay mekanizmaları ayrıca yapılandırılmalıdır.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DISTANCE MODAL
+    ===================================================== -->
+
+    <div
+        class="modal"
+        id="modal-distance"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="distance-title"
+    >
+
+        <div class="modal-box">
+
+            <div class="modal-head">
+
+                <h2 id="distance-title">
+                    Mesafeli Hizmet Koşulları
+                </h2>
+
+                <button
+                    class="close-modal"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-content">
+
+                <div class="notice">
+                    Bu bölüm web tasarım ve dijital hizmet satışına
+                    yönelik genel bir taslaktır. Yayına almadan önce
+                    gerçek satış modelinize ve güncel mevzuata göre
+                    kontrol edilmelidir.
+                </div>
+
+
+                <h3>1. Sağlayıcı</h3>
+
+                <p>
+                    Hizmet sağlayıcı: Mahmut Gazi Avcı
+                </p>
+
+                <p>
+                    Adres: [AÇIK ADRESİNİZ]
+                </p>
+
+                <p>
+                    E-posta: info@mahmutgaziavci.com
+                </p>
+
+                <p>
+                    Telefon: [TELEFON NUMARANIZ]
+                </p>
+
+
+                <h3>2. Hizmetin Konusu</h3>
+
+                <p>
+                    Web tasarım, web geliştirme, e-ticaret kurulumu,
+                    SEO, bakım, teknik destek ve benzeri dijital
+                    hizmetlerin müşteri talebine göre sunulmasıdır.
+                </p>
+
+
+                <h3>3. Fiyatlandırma</h3>
+
+                <p>
+                    Web sitesindeki fiyatlar aksi belirtilmedikçe
+                    KDV hariç başlangıç fiyatlarıdır.
+                </p>
+
+
+                <h3>4. Ödeme</h3>
+
+                <p>
+                    Ödeme yöntemi ve ödeme planı proje başlamadan
+                    önce taraflar arasında yazılı olarak belirlenir.
+                </p>
+
+
+                <h3>5. Teslim</h3>
+
+                <p>
+                    Teslim süresi projenin kapsamına göre belirlenir.
+                    Müşterinin içerik, görsel, logo, erişim veya
+                    onayları geciktirmesi halinde teslim takvimi
+                    buna göre değişebilir.
+                </p>
+
+
+                <h3>6. Revizyon</h3>
+
+                <p>
+                    Revizyon sayısı ve kapsamı teklif veya
+                    sözleşmede belirlenir.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         COOKIE BANNER
+    ===================================================== -->
+
+    <div
+        class="cookie-banner"
+        id="cookieBanner"
+        role="region"
+        aria-label="Gizlilik tercihi"
+    >
+
+        <div class="cookie-content">
+
+            <p>
+                Bu web sitesi temel işlevler ve tercihlerin
+                hatırlanması için tarayıcı depolama teknolojileri
+                kullanabilir.
+            </p>
+
+
+            <div class="cookie-actions">
+
+                <button
+                    type="button"
+                    data-modal="cookie"
+                >
+                    Ayarlar
+                </button>
+
+                <button
+                    type="button"
+                    class="accept"
+                    id="acceptCookies"
+                >
+                    Kabul Et
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        "use strict";
+
+
+        /* =====================================================
+           HEADER SCROLL
+        ===================================================== */
+
+        const header =
+            document.getElementById("header");
+
+        const updateHeader =
+            () => {
+
+                header.classList.toggle(
+                    "scrolled",
+                    window.scrollY > 20
+                );
+
+            };
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+        updateHeader();
+
+
+        /* =====================================================
+           MOBILE MENU
+        ===================================================== */
+
+        const mobileMenu =
+            document.getElementById("mobileMenu");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        mobileMenu.addEventListener(
+            "click",
+            () => {
+
+                const isActive =
+                    navLinks.classList.toggle("active");
+
+                mobileMenu.setAttribute(
+                    "aria-expanded",
+                    String(isActive)
+                );
+
+                mobileMenu.setAttribute(
+                    "aria-label",
+                    isActive
+                        ? "Menüyü kapat"
+                        : "Menüyü aç"
+                );
+
+                mobileMenu.textContent =
+                    isActive ? "×" : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("active");
+
+                        mobileMenu.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        mobileMenu.setAttribute(
+                            "aria-label",
+                            "Menüyü aç"
+                        );
+
+                        mobileMenu.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           FAQ
+        ===================================================== */
+
+        const faqItems =
+            document.querySelectorAll(".faq-item");
+
+
+        faqItems.forEach(item => {
+
+            const button =
+                item.querySelector(".faq-question");
+
+            const answer =
+                item.querySelector(".faq-answer");
+
+            const icon =
+                button.querySelector("span");
+
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    const isOpen =
+                        item.classList.contains("active");
+
+
+                    faqItems.forEach(otherItem => {
+
+                        otherItem.classList.remove("active");
+
+                        otherItem
+                            .querySelector(".faq-question")
+                            .setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        otherItem
+                            .querySelector(".faq-answer")
+                            .style.maxHeight = null;
+
+                        otherItem
+                            .querySelector(".faq-question span")
+                            .textContent = "+";
+
+                    });
+
+
+                    if (!isOpen) {
+
+                        item.classList.add("active");
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                        answer.style.maxHeight =
+                            answer.scrollHeight + "px";
+
+                        icon.textContent = "−";
+
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* =====================================================
+           MODALS
+        ===================================================== */
+
+        const modals =
+            document.querySelectorAll(".modal");
+
+
+        function openModal(type) {
+
+            closeModals();
+
+            const modal =
+                document.getElementById(
+                    "modal-" + type
+                );
+
+            if (!modal) {
+                return;
+            }
+
+            modal.classList.add("active");
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+            const closeButton =
+                modal.querySelector(".close-modal");
+
+            if (closeButton) {
+                setTimeout(
+                    () => closeButton.focus(),
+                    50
+                );
+            }
+
+        }
+
+
+        function closeModals() {
+
+            modals.forEach(modal => {
+
+                modal.classList.remove("active");
+
+            });
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        document
+            .querySelectorAll("[data-modal]")
+            .forEach(trigger => {
+
+                trigger.addEventListener(
+                    "click",
+                    event => {
+
+                        event.preventDefault();
+
+                        openModal(
+                            trigger.dataset.modal
+                        );
+
+                    }
+                );
+
+            });
+
+
+        document
+            .querySelectorAll(".close-modal")
+            .forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    closeModals
+                );
+
+            });
+
+
+        modals.forEach(modal => {
+
+            modal.addEventListener(
+                "click",
+                event => {
+
+                    if (event.target === modal) {
+                        closeModals();
+                    }
+
+                }
+            );
+
+        });
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Escape") {
+                    closeModals();
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           COOKIE PREFERENCE
+        ===================================================== */
+
+        const cookieBanner =
+            document.getElementById(
+                "cookieBanner"
+            );
+
+        const cookieKey =
+            "mga_cookie_consent";
+
+
+        function acceptCookies() {
+
+            try {
+
+                localStorage.setItem(
+                    cookieKey,
+                    "accepted"
+                );
+
+            } catch (error) {
+                console.warn(
+                    "Local storage kullanılamadı.",
+                    error
+                );
+            }
+
+            cookieBanner.classList.remove(
+                "active"
+            );
+
+        }
+
+
+        document
+            .getElementById("acceptCookies")
+            .addEventListener(
+                "click",
+                acceptCookies
+            );
+
+
+        let cookieAccepted = false;
+
+        try {
+
+            cookieAccepted =
+                localStorage.getItem(cookieKey)
+                === "accepted";
+
+        } catch (error) {
+            cookieAccepted = false;
+        }
+
+
+        if (!cookieAccepted) {
+
+            setTimeout(
+                () => {
+
+                    cookieBanner.classList.add(
+                        "active"
+                    );
+
+                },
+                1200
+            );
+
+        }
+
+
+        /* =====================================================
+           REVEAL ANIMATION
+        ===================================================== */
+
+        const reduceMotion =
+            window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+
+        if (!reduceMotion) {
+
+            const observer =
+                new IntersectionObserver(
+                    entries => {
+
+                        entries.forEach(entry => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+                    {
+                        threshold: .12,
+                        rootMargin: "0px 0px -30px 0px"
+                    }
+                );
+
+
+            document
+                .querySelectorAll(".reveal")
+                .forEach(element => {
+
+                    observer.observe(element);
+
+                });
+
+        } else {
+
+            document
+                .querySelectorAll(".reveal")
+                .forEach(element => {
+
+                    element.classList.add("show");
+
+                });
+
+        }
+
+
+        /* =====================================================
+           HERO PARALLAX
+        ===================================================== */
+
+        const heroCard =
+            document.getElementById(
+                "heroCard"
+            );
+
+
+        if (
+            heroCard &&
+            !reduceMotion &&
+            window.matchMedia(
+                "(pointer:fine)"
+            ).matches
+        ) {
+
+            heroCard.addEventListener(
+                "mousemove",
+                event => {
+
+                    const rect =
+                        heroCard.getBoundingClientRect();
+
+                    const x =
+                        (event.clientX - rect.left)
+                        / rect.width;
+
+                    const y =
+                        (event.clientY - rect.top)
+                        / rect.height;
+
+                    const rotateY =
+                        (x - .5) * 3;
+
+                    const rotateX =
+                        (.5 - y) * 3;
+
+
+                    heroCard.style.transform =
+                        `perspective(1000px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)`;
+
+                }
+            );
+
+
+            heroCard.addEventListener(
+                "mouseleave",
+                () => {
+
+                    heroCard.style.transform =
+                        "perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           SMOOTH ANCHOR HANDLING
+        ===================================================== */
+
+        document
+            .querySelectorAll('a[href^="#"]')
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    event => {
+
+                        const targetId =
+                            link.getAttribute("href");
+
+                        if (
+                            !targetId ||
+                            targetId === "#"
+                        ) {
+                            return;
+                        }
+
+                        const target =
+                            document.querySelector(
+                                targetId
+                            );
+
+                        if (!target) {
+                            return;
+                        }
+
+                        event.preventDefault();
+
+                        target.scrollIntoView({
+                            behavior:
+                                reduceMotion
+                                    ? "auto"
+                                    : "smooth",
+                            block: "start"
+                        });
+
+                    }
+                );
+
+            });
+
+
+        /* =====================================================
+           STRUCTURED DATA
+        ===================================================== */
+
+        const schema = {
+
+            "@context":
+                "https://schema.org",
+
+            "@type":
+                "ProfessionalService",
+
+            "name":
+                "Mahmut Gazi Avcı",
+
+            "url":
+                "https://mahmutgaziavci.com/",
+
+            "description":
+                "Profesyonel web tasarım, web geliştirme, e-ticaret, SEO ve dijital çözümler.",
+
+            "areaServed": {
+                "@type": "Country",
+                "name": "Türkiye"
+            },
+
+            "serviceType": [
+                "Web Tasarım",
+                "Web Geliştirme",
+                "Kurumsal Web Sitesi",
+                "E-Ticaret",
+                "SEO",
+                "Özel Yazılım",
+                "UI/UX Tasarım"
+            ],
+
+            "knowsAbout": [
+                "Web Design",
+                "Web Development",
+                "SEO",
+                "E-Commerce",
+                "Responsive Design",
+                "UI/UX",
+                "Web Performance"
+            ]
+
+        };
+
+
+        const schemaScript =
+            document.createElement(
+                "script"
+            );
+
+        schemaScript.type =
+            "application/ld+json";
+
+        schemaScript.textContent =
+            JSON.stringify(schema);
+
+        document.head.appendChild(
+            schemaScript
+        );
+
+    </script>
+
+</body>
+</html>
